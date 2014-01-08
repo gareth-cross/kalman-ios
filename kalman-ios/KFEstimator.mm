@@ -202,7 +202,7 @@ BOOL skipCalibration = NO;
     {
         //  we may now estimate everything
         _eskf->predict(gr, delta);
-        _eskf->update(ar, mr, false);   //  true = use compass, false = integrate freely on yaw axis
+        _eskf->update(ar, mr, true);   //  true = use compass, false = integrate freely on yaw axis
     }
 }
 
