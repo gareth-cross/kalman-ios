@@ -18,7 +18,7 @@
 		7F0705B2186E931800F657A7 /* VTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0705B1186E931800F657A7 /* VTViewController.xib */; };
 		7F0705B4186E998B00F657A7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0705B3186E998B00F657A7 /* GLKit.framework */; };
 		7F0705B6186E999100F657A7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0705B5186E999100F657A7 /* OpenGLES.framework */; };
-		7F45E81218011B3500067AB7 /* CCUDPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F45E81118011B3500067AB7 /* CCUDPClient.m */; };
+		7FDD9440187DDF49002F6599 /* CCUDPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD943F187DDF49002F6599 /* CCUDPClient.m */; };
 		7FF9A80517FBA396008D4F20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF9A80417FBA396008D4F20 /* Foundation.framework */; };
 		7FF9A80717FBA396008D4F20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF9A80617FBA396008D4F20 /* CoreGraphics.framework */; };
 		7FF9A80917FBA396008D4F20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF9A80817FBA396008D4F20 /* UIKit.framework */; };
@@ -61,8 +61,8 @@
 		7F0705B1186E931800F657A7 /* VTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTViewController.xib; sourceTree = "<group>"; };
 		7F0705B3186E998B00F657A7 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7F0705B5186E999100F657A7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		7F45E81018011B3500067AB7 /* CCUDPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCUDPClient.h; path = "../../capture-client/capture-client/CCUDPClient.h"; sourceTree = "<group>"; };
-		7F45E81118011B3500067AB7 /* CCUDPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCUDPClient.m; path = "../../capture-client/capture-client/CCUDPClient.m"; sourceTree = "<group>"; };
+		7FDD943E187DDF49002F6599 /* CCUDPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUDPClient.h; sourceTree = "<group>"; };
+		7FDD943F187DDF49002F6599 /* CCUDPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUDPClient.m; sourceTree = "<group>"; };
 		7FF9A80117FBA396008D4F20 /* kalman-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kalman-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF9A80417FBA396008D4F20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7FF9A80617FBA396008D4F20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,8 +121,8 @@
 		7FE766F2180133D300719023 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				7F45E81018011B3500067AB7 /* CCUDPClient.h */,
-				7F45E81118011B3500067AB7 /* CCUDPClient.m */,
+				7FDD943E187DDF49002F6599 /* CCUDPClient.h */,
+				7FDD943F187DDF49002F6599 /* CCUDPClient.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 				7F07058E186977A600F657A7 /* AttitudeESKF.cpp in Sources */,
 				7F0705A9186E8C6E00F657A7 /* VTViewController.mm in Sources */,
 				7FF9A81117FBA396008D4F20 /* main.mm in Sources */,
-				7F45E81218011B3500067AB7 /* CCUDPClient.m in Sources */,
+				7FDD9440187DDF49002F6599 /* CCUDPClient.m in Sources */,
 				7F0705A2186D793700F657A7 /* KFCalibrateViewController.m in Sources */,
 				7FF9A81517FBA396008D4F20 /* KFAppDelegate.mm in Sources */,
 				7F0705A6186D7B6F00F657A7 /* KFEstimator.mm in Sources */,
