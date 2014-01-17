@@ -79,7 +79,7 @@ quat quat::transform(const quat& v)
     return q * v * q.conjugate();
 }
 
-matrix<3,3> quat::to_matrix()
+matrix<3,3> quat::to_matrix() const
 {
     matrix<3,3> R;
     

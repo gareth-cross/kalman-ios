@@ -82,7 +82,7 @@ public:
      *  @note The result is not correct if this quaternion is not a rotation in R3
      *  @return 3x3 Rotation matrix
      */
-    matrix<3,3> to_matrix();
+    matrix<3,3> to_matrix() const;
     
     /**
      *  @brief Integrate a rotation quaternion using 4th order Runge Kutta
