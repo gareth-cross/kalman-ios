@@ -444,9 +444,7 @@ matrix <N,M> operator / (const matrix<N,M>& A, const float S)
  */
 template <int N>
 matrix <N,N> invert(const matrix<N,N>& A, bool& success)
-{
-    using std::abs;
-    
+{    
     matrix <N,2 * N> aug;
     
     for (int i=0; i < N; i++)
@@ -454,7 +452,7 @@ matrix <N,N> invert(const matrix<N,N>& A, bool& success)
         for (int j=0; j < N; j++)
         {
             float v = A(i,j);
-            if (abs(v) < matrix<N,N> :: precision) {
+            if (fabsf(v) < matrix<N,N> :: precision) {
                 v = 0.0f;   //  clean floats
             }
             
