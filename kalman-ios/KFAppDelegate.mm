@@ -156,20 +156,10 @@
     if (self.estimator.compassCalibrated && self.estimator.gyroCalibrated)
     {
         //  log
-        auto q = self.estimator.eskf->getState();
-        
-        auto a = self.accelData.acceleration;
-        auto w = self.gyroData.rotationRate;
-    
-        //  uncomment to log state...
-        printf("%f, %f, %f, %f, %f, %f, %f, %f, %f, %f\n",
-               q.a(), q.b(), q.c(), q.d(),
-               -a.x, -a.y, -a.z,
-               -w.x, -w.y, -w.z);
-        
+        auto q = self.estimator.eskf->getQuat();
+            
         //  send transform to render view
-        auto R = q.to_matrix();
-        
+        auto R = q.matrix();
         auto M = GLKMatrix4MakeAndTranspose(R(0,0), R(0,1), R(0,2), 0.0f,
                                             R(1,0), R(1,1), R(1,2), 0.0f,
                                             R(2,0), R(2,1), R(2,2), 0.0f,

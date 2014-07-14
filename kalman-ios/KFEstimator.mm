@@ -34,13 +34,6 @@ static double getTime()
   return getTime_ns() / kOneBillion;
 }
 
-static float constrain(float v, float vmin, float vmax)
-{
-	if (v > vmax) return vmax;
-	if (v < vmin) return vmin;
-	return v;
-}
-
 @interface KFEstimator ()
 {
   double lastT;
@@ -65,6 +58,8 @@ static float constrain(float v, float vmin, float vmax)
     _eskf = new kr::AttitudeESKF();
     _eskf->setEstimatesBias(true);
     _eskf->setUsesMagnetometer(false);
+    _eskf->setGyroBiasThreshold(0.03f);
+    _eskf->setFlipZAxis(true);
     
     kr::AttitudeESKF::VarSettings var;
     var.accel[0] = var.accel[1] = var.accel[2] = 1.0;
@@ -96,13 +91,13 @@ static float constrain(float v, float vmin, float vmax)
   
   auto ar = Vector3d(acceleration.x, acceleration.y, acceleration.z);
   auto gr = Vector3d(rotationRate.x, rotationRate.y, rotationRate.z);
-  auto mr = Vector3d(magneticField.x, magneticField.y, magneticField.z);
+  auto mr = Vector3d(magneticField.x*0.01, magneticField.y*0.01, magneticField.z*0.01);
   
   if (!self.gyroCalibrated)
   {
-    if (std::abs(gr(0)) > 0.05f ||
-        std::abs(gr(1)) > 0.05f ||
-        std::abs(gr(2)) > 0.05f) {
+    if (std::abs(gr(0)) > 0.03f ||
+        std::abs(gr(1)) > 0.03f ||
+        std::abs(gr(2)) > 0.03f) {
       lastDisturbance = [NSDate date];
       NSLog(@"Disturbed!");
     }
@@ -118,14 +113,44 @@ static float constrain(float v, float vmin, float vmax)
       self.gyroCalibrated = YES;
     }
   }
-  else if (!self.compassCalibrated)
+  /*else if (!self.compassCalibrated)
   {
+    //NSLog(@"Adding sample: %f, %f, %f\n", mr[0], mr[1], mr[2]);
+    
     magCalib->appendSample(_eskf->getQuat(), mr);
+    
+    if (magCalib->isReady()) {
+      try {
+        magCalib->calibrate(kr::AttitudeMagCalib::FullCalibration);
+        self.compassCalibrated = YES;
+      }
+      catch(kr::AttitudeMagCalib::singular_hessian& e) {
+        NSLog(@"Error: hessian was singular during calibration");
+      }
+    }
+  }*/
+  
+  if (self.compassCalibrated) {
+
+    //  subtract bias and apply scale
+    /*Vector3d bias = magCalib->getBias();
+    Vector3d scale = magCalib->getScale();
+    
+    for (int i=0; i < 3; i++) {
+      mr[i] = (mr[i] - bias[i]) / scale[i];
+    }
+    
+    _eskf->setMagneticReference( magCalib->getReference() );
+    _eskf->setUsesMagnetometer(true);*/
+  } else {
+    _eskf->setUsesMagnetometer(false);
   }
   
-  _eskf->setUsesMagnetometer(self.compassCalibrated);
   _eskf->predict(gr, delta);
   _eskf->update(ar,mr);
+  
+  auto Q = _eskf->getQuat();
+  NSLog(@"%f, %f, %f, %f", Q.w(), Q.x(), Q.y(), Q.z());
 }
 
 @end
