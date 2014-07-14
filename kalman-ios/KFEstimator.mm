@@ -58,7 +58,7 @@ static double getTime()
     _eskf = new kr::AttitudeESKF();
     _eskf->setEstimatesBias(true);
     _eskf->setUsesMagnetometer(false);
-    _eskf->setGyroBiasThreshold(0.03f);
+    _eskf->setGyroBiasThreshold(0.05f);
     _eskf->setFlipZAxis(true);
     
     kr::AttitudeESKF::VarSettings var;
@@ -79,6 +79,10 @@ static double getTime()
     delete _eskf;
     _eskf=0;
   }
+  if (magCalib) {
+    delete magCalib;
+    magCalib=0;
+  }
 }
 
 - (void)readAccel:(CMAcceleration)acceleration
@@ -95,9 +99,9 @@ static double getTime()
   
   if (!self.gyroCalibrated)
   {
-    if (std::abs(gr(0)) > 0.03f ||
-        std::abs(gr(1)) > 0.03f ||
-        std::abs(gr(2)) > 0.03f) {
+    if (std::abs(gr(0)) > 0.05f ||
+        std::abs(gr(1)) > 0.05f ||
+        std::abs(gr(2)) > 0.05f) {
       lastDisturbance = [NSDate date];
       NSLog(@"Disturbed!");
     }
@@ -113,9 +117,9 @@ static double getTime()
       self.gyroCalibrated = YES;
     }
   }
-  /*else if (!self.compassCalibrated)
+  else if (!self.compassCalibrated)
   {
-    //NSLog(@"Adding sample: %f, %f, %f\n", mr[0], mr[1], mr[2]);
+    NSLog(@"Adding sample: %f, %f, %f\n", mr[0], mr[1], mr[2]);
     
     magCalib->appendSample(_eskf->getQuat(), mr);
     
@@ -128,12 +132,12 @@ static double getTime()
         NSLog(@"Error: hessian was singular during calibration");
       }
     }
-  }*/
+  }
   
   if (self.compassCalibrated) {
 
     //  subtract bias and apply scale
-    /*Vector3d bias = magCalib->getBias();
+    Vector3d bias = magCalib->getBias();
     Vector3d scale = magCalib->getScale();
     
     for (int i=0; i < 3; i++) {
@@ -141,7 +145,7 @@ static double getTime()
     }
     
     _eskf->setMagneticReference( magCalib->getReference() );
-    _eskf->setUsesMagnetometer(true);*/
+    _eskf->setUsesMagnetometer(true);
   } else {
     _eskf->setUsesMagnetometer(false);
   }
@@ -150,7 +154,7 @@ static double getTime()
   _eskf->update(ar,mr);
   
   auto Q = _eskf->getQuat();
-  NSLog(@"%f, %f, %f, %f", Q.w(), Q.x(), Q.y(), Q.z());
+  //NSLog(@"%f, %f, %f, %f", Q.w(), Q.x(), Q.y(), Q.z());
 }
 
 @end
