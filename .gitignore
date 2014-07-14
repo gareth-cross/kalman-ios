@@ -1,0 +1,42 @@
+# IGNORE EXTERNAL PROJECT FILES
+kr_attitude_eskf/
+kr_attitude_eskf/*
+kr_math/
+kr_math/*
+
+# IGNORE ZEND/ECLIPSE
+*.buildpath
+
+# IGNORE GCC-ARM BUILD PRODUCTS
+*.d
+*.o
+*.disasm
+*.map
+*.elf
+*.bin
+*.hex
+
+# IGNORE JETBRAINS
+*.idea
+
+# IGNORE MACOSX
+*.DS_Store
+
+# IGNORE GENERATED DOCUMENTATION
+html_docs/
+html_docs/*
+
+# IGNORE ANDROID SDK GENERATED JAVA
+gen/
+gen/*
+
+# IGNORE XCODE USER SETTINGS
+*.xcuserdatad/
+*.xcuserdatad/*
+*.pbxuser
+*.pbxuser/*
+
+# IGNORE XCODE BUILD PRODUCTS
+*.build/
+*.build/*
+

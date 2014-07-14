@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F07058B1869778900F657A7 /* quaternion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F0705881869778900F657A7 /* quaternion.cpp */; };
-		7F07058E186977A600F657A7 /* AttitudeESKF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F07058C186977A600F657A7 /* AttitudeESKF.cpp */; };
 		7F0705A2186D793700F657A7 /* KFCalibrateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F0705A0186D793700F657A7 /* KFCalibrateViewController.m */; };
 		7F0705A3186D793700F657A7 /* KFCalibrateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0705A1186D793700F657A7 /* KFCalibrateViewController.xib */; };
 		7F0705A6186D7B6F00F657A7 /* KFEstimator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7F0705A5186D7B6F00F657A7 /* KFEstimator.mm */; };
@@ -18,7 +16,8 @@
 		7F0705B2186E931800F657A7 /* VTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0705B1186E931800F657A7 /* VTViewController.xib */; };
 		7F0705B4186E998B00F657A7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0705B3186E998B00F657A7 /* GLKit.framework */; };
 		7F0705B6186E999100F657A7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0705B5186E999100F657A7 /* OpenGLES.framework */; };
-		7FDD9440187DDF49002F6599 /* CCUDPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD943F187DDF49002F6599 /* CCUDPClient.m */; };
+		7F5A745E1973AC7600F0F2E1 /* AttitudeMagCalib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A745B1973AC7600F0F2E1 /* AttitudeMagCalib.cpp */; };
+		7F5A745F1973AC7600F0F2E1 /* AttitudeESKF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A745D1973AC7600F0F2E1 /* AttitudeESKF.cpp */; };
 		7FF9A80517FBA396008D4F20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF9A80417FBA396008D4F20 /* Foundation.framework */; };
 		7FF9A80717FBA396008D4F20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF9A80617FBA396008D4F20 /* CoreGraphics.framework */; };
 		7FF9A80917FBA396008D4F20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF9A80817FBA396008D4F20 /* UIKit.framework */; };
@@ -43,11 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7F0705881869778900F657A7 /* quaternion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = quaternion.cpp; sourceTree = "<group>"; };
-		7F0705891869778900F657A7 /* quaternion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = quaternion.hpp; sourceTree = "<group>"; };
-		7F07058C186977A600F657A7 /* AttitudeESKF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AttitudeESKF.cpp; sourceTree = "<group>"; };
-		7F07058D186977A600F657A7 /* AttitudeESKF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AttitudeESKF.hpp; sourceTree = "<group>"; };
-		7F070590186987EE00F657A7 /* matrix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = matrix.hpp; sourceTree = "<group>"; };
 		7F07059F186D793700F657A7 /* KFCalibrateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KFCalibrateViewController.h; sourceTree = "<group>"; };
 		7F0705A0186D793700F657A7 /* KFCalibrateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KFCalibrateViewController.m; sourceTree = "<group>"; };
 		7F0705A1186D793700F657A7 /* KFCalibrateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KFCalibrateViewController.xib; sourceTree = "<group>"; };
@@ -61,8 +55,10 @@
 		7F0705B1186E931800F657A7 /* VTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTViewController.xib; sourceTree = "<group>"; };
 		7F0705B3186E998B00F657A7 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7F0705B5186E999100F657A7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		7FDD943E187DDF49002F6599 /* CCUDPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCUDPClient.h; sourceTree = "<group>"; };
-		7FDD943F187DDF49002F6599 /* CCUDPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCUDPClient.m; sourceTree = "<group>"; };
+		7F5A745A1973AC7600F0F2E1 /* AttitudeMagCalib.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AttitudeMagCalib.hpp; path = ../../kumar_robotics/kr_attitude_eskf/src/AttitudeMagCalib.hpp; sourceTree = "<group>"; };
+		7F5A745B1973AC7600F0F2E1 /* AttitudeMagCalib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttitudeMagCalib.cpp; path = ../../kumar_robotics/kr_attitude_eskf/src/AttitudeMagCalib.cpp; sourceTree = "<group>"; };
+		7F5A745C1973AC7600F0F2E1 /* AttitudeESKF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AttitudeESKF.hpp; path = ../../kumar_robotics/kr_attitude_eskf/src/AttitudeESKF.hpp; sourceTree = "<group>"; };
+		7F5A745D1973AC7600F0F2E1 /* AttitudeESKF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttitudeESKF.cpp; path = ../../kumar_robotics/kr_attitude_eskf/src/AttitudeESKF.cpp; sourceTree = "<group>"; };
 		7FF9A80117FBA396008D4F20 /* kalman-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kalman-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF9A80417FBA396008D4F20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7FF9A80617FBA396008D4F20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -109,22 +105,12 @@
 		7F07058518696AE300F657A7 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				7F070590186987EE00F657A7 /* matrix.hpp */,
-				7F0705881869778900F657A7 /* quaternion.cpp */,
-				7F0705891869778900F657A7 /* quaternion.hpp */,
-				7F07058C186977A600F657A7 /* AttitudeESKF.cpp */,
-				7F07058D186977A600F657A7 /* AttitudeESKF.hpp */,
+				7F5A745A1973AC7600F0F2E1 /* AttitudeMagCalib.hpp */,
+				7F5A745B1973AC7600F0F2E1 /* AttitudeMagCalib.cpp */,
+				7F5A745C1973AC7600F0F2E1 /* AttitudeESKF.hpp */,
+				7F5A745D1973AC7600F0F2E1 /* AttitudeESKF.cpp */,
 			);
 			name = Filter;
-			sourceTree = "<group>";
-		};
-		7FE766F2180133D300719023 /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				7FDD943E187DDF49002F6599 /* CCUDPClient.h */,
-				7FDD943F187DDF49002F6599 /* CCUDPClient.m */,
-			);
-			name = Networking;
 			sourceTree = "<group>";
 		};
 		7FE766F3180133DE00719023 /* UI */ = {
@@ -180,7 +166,6 @@
 				7FF9A81417FBA396008D4F20 /* KFAppDelegate.mm */,
 				7F0705A4186D7B6F00F657A7 /* KFEstimator.h */,
 				7F0705A5186D7B6F00F657A7 /* KFEstimator.mm */,
-				7FE766F2180133D300719023 /* Networking */,
 				7FE766F3180133DE00719023 /* UI */,
 				7FF9A80B17FBA396008D4F20 /* Supporting Files */,
 				7FF9A81C17FBA396008D4F20 /* Images.xcassets */,
@@ -247,7 +232,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = KF;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = gareth;
 				TargetAttributes = {
 					7FF9A82117FBA396008D4F20 = {
@@ -302,12 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F07058B1869778900F657A7 /* quaternion.cpp in Sources */,
-				7F07058E186977A600F657A7 /* AttitudeESKF.cpp in Sources */,
 				7F0705A9186E8C6E00F657A7 /* VTViewController.mm in Sources */,
+				7F5A745E1973AC7600F0F2E1 /* AttitudeMagCalib.cpp in Sources */,
 				7FF9A81117FBA396008D4F20 /* main.mm in Sources */,
-				7FDD9440187DDF49002F6599 /* CCUDPClient.m in Sources */,
 				7F0705A2186D793700F657A7 /* KFCalibrateViewController.m in Sources */,
+				7F5A745F1973AC7600F0F2E1 /* AttitudeESKF.cpp in Sources */,
 				7FF9A81517FBA396008D4F20 /* KFAppDelegate.mm in Sources */,
 				7F0705A6186D7B6F00F657A7 /* KFEstimator.mm in Sources */,
 			);
@@ -346,7 +330,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -385,7 +368,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -423,6 +405,12 @@
 				DEAD_CODE_STRIPPING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kalman-ios/kalman-ios-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include/eigen3,
+					./kr_math/include,
+				);
 				INFOPLIST_FILE = "kalman-ios/kalman-ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "";
@@ -441,6 +429,12 @@
 				DEAD_CODE_STRIPPING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "kalman-ios/kalman-ios-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include/eigen3,
+					./kr_math/include,
+				);
 				INFOPLIST_FILE = "kalman-ios/kalman-ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "";
@@ -453,7 +447,6 @@
 		7FF9A83717FBA396008D4F20 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/kalman-ios.app/kalman-ios";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -476,7 +469,6 @@
 		7FF9A83817FBA396008D4F20 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/kalman-ios.app/kalman-ios";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

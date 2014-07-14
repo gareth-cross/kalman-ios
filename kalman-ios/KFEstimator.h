@@ -3,7 +3,7 @@
 //  kalman-ios
 //
 //  Created by Gareth Cross on 12/27/2013.
-//  Copyright (c) 2013 gareth. All rights reserved.
+//  Copyright (c) 2013 gareth. Apache 2 License.
 //
 
 #import <Foundation/Foundation.h>
@@ -19,5 +19,5 @@
 @property (nonatomic, assign) BOOL gyroCalibrated;
 @property (nonatomic, assign) BOOL compassCalibrated;
 
-@property (nonatomic, readonly) AttitudeESKF * eskf;
+@property (nonatomic, readonly) kr::AttitudeESKF * eskf;
 @end

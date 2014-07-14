@@ -3,13 +3,12 @@
 //  kalman-ios
 //
 //  Created by Gareth Cross on 2013-10-01.
-//  Copyright (c) 2013 gareth. All rights reserved.
+//  Copyright (c) 2013 gareth. Apache 2 License.
 //
 
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
 
-#import "CCUDPClient.h"
 #import "KFCalibrateViewController.h"
 #import "KFEstimator.h"
 #import "VTViewController.h"
@@ -19,7 +18,6 @@
 
 @property (strong) CMMotionManager * motionManager;
 @property (strong) KFEstimator * estimator;
-@property (strong) CCUDPClient * client;
 
 @property (strong, nonatomic) KFCalibrateViewController * calibrateVC;
 @property (strong, nonatomic) VTViewController * renderVC;
