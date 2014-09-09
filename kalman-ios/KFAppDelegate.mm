@@ -121,7 +121,7 @@
 {
     if ([keyPath isEqualToString:@"gyroCalibrated"])
     {
-        self.calibrateVC.instructionLabel.text = @"Rotate the device in all directions.";
+        self.calibrateVC.instructionLabel.text = @"Rotate the device.";
     }
     else if ([keyPath isEqualToString:@"compassCalibrated"])
     {
@@ -160,10 +160,10 @@
             
         //  send transform to render view
         auto R = q.matrix();
-        auto M = GLKMatrix4MakeAndTranspose(R(0,0), R(0,1), R(0,2), 0.0f,
-                                            R(1,0), R(1,1), R(1,2), 0.0f,
-                                            R(2,0), R(2,1), R(2,2), 0.0f,
-                                            0.0f, 0.0f, 0.0f, 1.0f);
+        auto M = GLKMatrix4Make(R(0,0), R(0,1), R(0,2), 0.0f,
+                                R(1,0), R(1,1), R(1,2), 0.0f,
+                                R(2,0), R(2,1), R(2,2), 0.0f,
+                                0.0f, 0.0f, 0.0f, 1.0f);
         
         self.renderVC.cubeOrientation = M;
     }

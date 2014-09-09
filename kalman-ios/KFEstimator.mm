@@ -59,14 +59,6 @@ static double getTime()
     _eskf->setEstimatesBias(true);
     _eskf->setUsesMagnetometer(false);
     _eskf->setGyroBiasThreshold(0.05f);
-    _eskf->setFlipZAxis(true);
-    
-    kr::AttitudeESKF::VarSettings var;
-    var.accel[0] = var.accel[1] = var.accel[2] = 1.0;
-    var.gyro[0] = var.gyro[1] = var.gyro[2] = 1e-4;
-    var.mag[0] = var.mag[1] = var.mag[2] = 0.1;
-    
-    _eskf->setVariances(var);
     
     magCalib = new kr::AttitudeMagCalib();
   }
@@ -94,16 +86,16 @@ static double getTime()
   lastT = T;
   
   auto ar = Vector3d(acceleration.x, acceleration.y, acceleration.z);
+  ar *= 9.80665;
   auto gr = Vector3d(rotationRate.x, rotationRate.y, rotationRate.z);
   auto mr = Vector3d(magneticField.x*0.01, magneticField.y*0.01, magneticField.z*0.01);
   
   if (!self.gyroCalibrated)
   {
-    if (std::abs(gr(0)) > 0.05f ||
-        std::abs(gr(1)) > 0.05f ||
-        std::abs(gr(2)) > 0.05f) {
+    if (std::abs(gr(0)) > 0.05 ||
+        std::abs(gr(1)) > 0.05 ||
+        std::abs(gr(2)) > 0.05) {
       lastDisturbance = [NSDate date];
-      NSLog(@"Disturbed!");
     }
     
     if (lastDisturbance.timeIntervalSinceNow < -0.5 || !lastDisturbance)
@@ -118,15 +110,17 @@ static double getTime()
     }
   }
   else if (!self.compassCalibrated)
-  {
-    NSLog(@"Adding sample: %f, %f, %f\n", mr[0], mr[1], mr[2]);
-    
+  {    
     magCalib->appendSample(_eskf->getQuat(), mr);
     
     if (magCalib->isReady()) {
       try {
         magCalib->calibrate(kr::AttitudeMagCalib::FullCalibration);
         self.compassCalibrated = YES;
+        Vector3d bias = magCalib->getBias();
+        Vector3d scale = magCalib->getScale();
+        NSLog(@"Bias: %f, %f, %f", bias[0], bias[1], bias[2]);
+        NSLog(@"Scale: %f, %f, %f", scale[0], scale[1], scale[2]);
       }
       catch(kr::AttitudeMagCalib::singular_hessian& e) {
         NSLog(@"Error: hessian was singular during calibration");
@@ -139,7 +133,7 @@ static double getTime()
     //  subtract bias and apply scale
     Vector3d bias = magCalib->getBias();
     Vector3d scale = magCalib->getScale();
-    
+        
     for (int i=0; i < 3; i++) {
       mr[i] = (mr[i] - bias[i]) / scale[i];
     }
@@ -150,11 +144,26 @@ static double getTime()
     _eskf->setUsesMagnetometer(false);
   }
   
-  _eskf->predict(gr, delta);
-  _eskf->update(ar,mr);
+  //  gyroscope covariance
+  kr::mat3d gyroCov;
+  gyroCov << 1e-4, 0, 0,
+             0, 1e-4, 0,
+             0, 0, 1e-4;
   
-  auto Q = _eskf->getQuat();
-  //NSLog(@"%f, %f, %f, %f", Q.w(), Q.x(), Q.y(), Q.z());
+  //  acclerometer covariance
+  kr::mat3d aCov;
+  aCov << 0.1, 0, 0,
+          0, 0.1, 0,
+          0, 0, 0.1;
+  
+  //  magnetometer
+  kr::mat3d mCov;
+  mCov << 0.3, 0, 0,
+          0, 0.3, 0,
+          0, 0, 0.3;
+  
+  _eskf->predict(gr, delta, gyroCov, true);
+  _eskf->update(ar,aCov,mr,mCov);
 }
 
 @end

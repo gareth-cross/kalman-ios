@@ -16,8 +16,8 @@
 		7F0705B2186E931800F657A7 /* VTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F0705B1186E931800F657A7 /* VTViewController.xib */; };
 		7F0705B4186E998B00F657A7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0705B3186E998B00F657A7 /* GLKit.framework */; };
 		7F0705B6186E999100F657A7 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0705B5186E999100F657A7 /* OpenGLES.framework */; };
-		7F5A745E1973AC7600F0F2E1 /* AttitudeMagCalib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A745B1973AC7600F0F2E1 /* AttitudeMagCalib.cpp */; };
-		7F5A745F1973AC7600F0F2E1 /* AttitudeESKF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A745D1973AC7600F0F2E1 /* AttitudeESKF.cpp */; };
+		7F0B097719BED605004D3243 /* AttitudeESKF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B097519BED605004D3243 /* AttitudeESKF.cpp */; };
+		7F0B097819BED605004D3243 /* AttitudeMagCalib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B097619BED605004D3243 /* AttitudeMagCalib.cpp */; };
 		7FF9A80517FBA396008D4F20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF9A80417FBA396008D4F20 /* Foundation.framework */; };
 		7FF9A80717FBA396008D4F20 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF9A80617FBA396008D4F20 /* CoreGraphics.framework */; };
 		7FF9A80917FBA396008D4F20 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FF9A80817FBA396008D4F20 /* UIKit.framework */; };
@@ -55,10 +55,10 @@
 		7F0705B1186E931800F657A7 /* VTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VTViewController.xib; sourceTree = "<group>"; };
 		7F0705B3186E998B00F657A7 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7F0705B5186E999100F657A7 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		7F5A745A1973AC7600F0F2E1 /* AttitudeMagCalib.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AttitudeMagCalib.hpp; path = ../../kumar_robotics/kr_attitude_eskf/src/AttitudeMagCalib.hpp; sourceTree = "<group>"; };
-		7F5A745B1973AC7600F0F2E1 /* AttitudeMagCalib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttitudeMagCalib.cpp; path = ../../kumar_robotics/kr_attitude_eskf/src/AttitudeMagCalib.cpp; sourceTree = "<group>"; };
-		7F5A745C1973AC7600F0F2E1 /* AttitudeESKF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AttitudeESKF.hpp; path = ../../kumar_robotics/kr_attitude_eskf/src/AttitudeESKF.hpp; sourceTree = "<group>"; };
-		7F5A745D1973AC7600F0F2E1 /* AttitudeESKF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttitudeESKF.cpp; path = ../../kumar_robotics/kr_attitude_eskf/src/AttitudeESKF.cpp; sourceTree = "<group>"; };
+		7F0B097319BED5FC004D3243 /* AttitudeESKF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AttitudeESKF.hpp; path = ../../kumar_robotics/kr_attitude_eskf/include/kr_attitude_eskf/AttitudeESKF.hpp; sourceTree = "<group>"; };
+		7F0B097419BED5FC004D3243 /* AttitudeMagCalib.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = AttitudeMagCalib.hpp; path = ../../kumar_robotics/kr_attitude_eskf/include/kr_attitude_eskf/AttitudeMagCalib.hpp; sourceTree = "<group>"; };
+		7F0B097519BED605004D3243 /* AttitudeESKF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttitudeESKF.cpp; path = ../../kumar_robotics/kr_attitude_eskf/src/AttitudeESKF.cpp; sourceTree = "<group>"; };
+		7F0B097619BED605004D3243 /* AttitudeMagCalib.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AttitudeMagCalib.cpp; path = ../../kumar_robotics/kr_attitude_eskf/src/AttitudeMagCalib.cpp; sourceTree = "<group>"; };
 		7FF9A80117FBA396008D4F20 /* kalman-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kalman-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF9A80417FBA396008D4F20 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7FF9A80617FBA396008D4F20 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,10 +105,10 @@
 		7F07058518696AE300F657A7 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				7F5A745A1973AC7600F0F2E1 /* AttitudeMagCalib.hpp */,
-				7F5A745B1973AC7600F0F2E1 /* AttitudeMagCalib.cpp */,
-				7F5A745C1973AC7600F0F2E1 /* AttitudeESKF.hpp */,
-				7F5A745D1973AC7600F0F2E1 /* AttitudeESKF.cpp */,
+				7F0B097519BED605004D3243 /* AttitudeESKF.cpp */,
+				7F0B097619BED605004D3243 /* AttitudeMagCalib.cpp */,
+				7F0B097319BED5FC004D3243 /* AttitudeESKF.hpp */,
+				7F0B097419BED5FC004D3243 /* AttitudeMagCalib.hpp */,
 			);
 			name = Filter;
 			sourceTree = "<group>";
@@ -287,11 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0B097819BED605004D3243 /* AttitudeMagCalib.cpp in Sources */,
+				7F0B097719BED605004D3243 /* AttitudeESKF.cpp in Sources */,
 				7F0705A9186E8C6E00F657A7 /* VTViewController.mm in Sources */,
-				7F5A745E1973AC7600F0F2E1 /* AttitudeMagCalib.cpp in Sources */,
 				7FF9A81117FBA396008D4F20 /* main.mm in Sources */,
 				7F0705A2186D793700F657A7 /* KFCalibrateViewController.m in Sources */,
-				7F5A745F1973AC7600F0F2E1 /* AttitudeESKF.cpp in Sources */,
 				7FF9A81517FBA396008D4F20 /* KFAppDelegate.mm in Sources */,
 				7F0705A6186D7B6F00F657A7 /* KFEstimator.mm in Sources */,
 			);
@@ -410,6 +410,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include/eigen3,
 					./kr_math/include,
+					./kr_attitude_eskf/include,
 				);
 				INFOPLIST_FILE = "kalman-ios/kalman-ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -434,6 +435,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include/eigen3,
 					./kr_math/include,
+					./kr_attitude_eskf/include,
 				);
 				INFOPLIST_FILE = "kalman-ios/kalman-ios-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
