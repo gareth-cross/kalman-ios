@@ -1,6 +1,10 @@
 kalman-ios
 ==========
 
+**DISCLAIMER**: I authored this repo some time ago. I no longer consider it a good reference implementation of an attitude filter. Were I to re-write it today the code would look different in many respects. It is entirely plausible that there are mistakes in the current implementation. The code is not maintained, nor is it unit-tested to the standard I would now demand. I would encourage developers to _look elsewhere for a better example_.
+
+---
+
 Author: Gareth, gcross [dot] code [at] icloud.com
 
 ---
