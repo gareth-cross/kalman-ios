@@ -63,10 +63,10 @@ void AttitudeESKF::update(const matrix<3>& ab, const matrix<3>& mb, bool include
 
     //  predict gravity vector
     matrix <3> gi; gi(2) = 1.0f;
-    m_aPred = R * gi;
+    m_aPred = R.transposed() * gi;
 
     //  calculate gravity component of Jacobian and residual
-    H.subs(0, 0, R * matrix<3,3> :: cross_skew( gi * -1 ));
+    H.subs(0, 0, matrix<3,3> :: cross_skew(R.transposed() * gi * -1 ));
 
     r(0) = a(0) - m_aPred(0);
     r(1) = a(1) - m_aPred(1);
